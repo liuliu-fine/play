@@ -2,8 +2,13 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <!--所有页面的链接以此为基础-->
+    <base href="../">
     <meta charset="utf-8">
     <title>这是标题</title>
+    <!--[if lt IE 9] 解析html5.js，使用百度静态资源库-->
+    <script src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
+    <!--[endif]-->
 </head>
 <body>
 <h1>这是个标题</h1>
@@ -14,19 +19,142 @@
 <h4>这是个标题</h4>
 <h5>这是个标题</h5>
 <h6 title="name">这是个标题</h6>
+
 <p>xhtml是扩展的html。我理解为严格版本，只支持小写，所有的元素都需要关闭。不允许缩写例如：checked="checked"</p>
 <abbr title="缩了好多好多的字啊">这个是缩写</abbr>
 <a title="这是title属性">鼠标放上去显示链接详细情况</a>
 
-<div>hello world!</div>
-<div>
-    可以深入的属性object、
-</div>
+<p>hello world!</p>
+<bdo dir="rtl">Here is some text</bdo>
+<bdo dir="rtl">你好</bdo>
+
+<p>
+    可以深入的属性object、area、svg(图片质量与分辨率无关)、drag、地理位置（http://www.runoob.com/try/try.php?filename=tryhtml5_geolocation_map_script）
+</p>
+<img src="images/boy.jpg" alt="area测试" usemap="#people">
+<map name="people" id="people">
+    <area shape="rect" coords="0,0,82,126" href="html/image1.html" alt="cup">
+    <area shape="circle" coords="90,58,30" href="html/image2.html" alt="girl">
+    <area shape="circle" coords="124,58,58" href="html/image3.html" alt="shirt">
+</map>
+<img src="images/lamp.jpg" id="lamp">
+<canvas id="myCanvas" width="300" height="150" style="border: 1px solid">
+    这是不支持的浏览器
+</canvas>
+//限定日期的解决方案 firefox和ie10不支持
+<form action="demo-form.php">
+
+    输入 1980-01-01 之前的日期:
+    <input type="date" name="bday" max="1979-12-30"><br>
+
+    输入 2000-01-01 之后的日期:
+    <input type="date" name="bday" min="2000-01-02"><br>
+
+    数量 (在1和5之间):required 属性也可以有
+    11 <input type="number" name="quantity" min="1" max="5"><br>
+    Country code: <input type="text" name="country_code" pattern="[A-Za-z]{3}" title="Three letter country code">
+    <input type="submit">
+</form>
+http://www.runoob.com/html/html5-semantic-elements.html
+<article>
+    <h1>article的潜在来源：</h1>
+    论坛帖子
+    博客文章
+    新闻故事
+    评论
+    aside 标签定义 article 标签外的内容。
+    aside 的内容应该与附近的内容相关。<br/>
+    ol中的type属性可以定义序号。<br/>
+    h5中的time完全不会用，<br/>
+
+</article>
+<aside>
+    <h4>aside边框下的文字形式</h4>
+    <em>The Epcot Center is a theme park in Disney World, Florida.</em>--em<br/>
+    <mark>The Epcot Center is a theme park in Disney World, Florida.</mark>
+    --mark<br/>
+    <strong>The Epcot Center is a theme park in Disney World, Florida.</strong>--strong<br/>
+    <b>The Epcot Center is a theme park in Disney World, Florida.</b>--b
+
+</aside>
+<!--<audio autoplay>-->
+<audio controls>
+    <source src="radio/test.mp3">
+    可以显示吗？
+</audio>
+<p>bdi适用于奇怪的文字</p>
+<ul>
+    <li>User
+        <bdi>hrefs</bdi>
+        : 60 points
+    </li>
+    <li>User
+        <bdi>jdoe</bdi>
+        : 80 points
+    </li>
+    <li>User
+        <bdi>إيان</bdi>
+        : 90 points
+    </li>
+</ul>
 <footer>
     <address>
         作者：刘柳<br/>
         地址：湖南 岳阳
     </address>
 </footer>
+
+<script>
+    var c = document.getElementById('myCanvas');
+    var ctx = c.getContext('2d');
+    //线性渐变
+    //    var liner = ctx.createLinearGradient(0, 0, 300, 0);
+    //    liner.addColorStop(0, "black");
+    //    liner.addColorStop(0.3, "red");
+    //    liner.addColorStop(0.5, "white");
+    //    liner.addColorStop(1, "green");
+    //    ctx.fillStyle = liner;
+    //    ctx.fillRect(0, 0, 300, 100);
+
+    //圆形渐变
+    //    liner = ctx.createRadialGradient(50, 50, 10, 90, 90, 100);
+    //    liner.addColorStop(0, "black");
+    //    liner.addColorStop(0.3, "red");
+    //    liner.addColorStop(0.5, "white");
+    //    liner.addColorStop(1, "green");
+    //    ctx.fillStyle = liner;
+    //    ctx.fillRect(0, 0, 300, 150);
+
+    //图片填充
+    //    var img = document.getElementById('lamp');
+    //    var liner = ctx.createPattern(img, "no-repeat");
+    //    ctx.rect(0, 0, 300, 150);
+    //    ctx.fillStyle = liner;
+    //    ctx.fill();
+
+    //彩色文字
+//    ctx.font="50px Verdana";
+//    var grd3=ctx.createLinearGradient(0,20,240,90);
+//    grd3.addColorStop(0,"black");
+//    grd3.addColorStop("0.3","magenta");
+//    grd3.addColorStop("0.6","blue");
+//    grd3.addColorStop("0.8","green");
+//    grd3.addColorStop(1,"red");
+//    ctx.strokeStyle=grd3;
+//    ctx.strokeText("Smile!",0,120);
+
+    //直线
+//    ctx.moveTo(0,0);
+//    ctx.lineTo(200,150);
+//    ctx.stroke();
+
+    //圆
+
+    ctx.beginPath();
+    ctx.arc(95,50,40,0,2*Math.PI);
+    ctx.stroke();
+
+</script>
+
 </body>
 </html>
