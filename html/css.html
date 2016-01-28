@@ -5,34 +5,94 @@
     <title></title>
 </head>
 <style>
+    body {
+        background-image: url('../images/girl.jpg');
+        background-repeat: no-repeat;
+        background-position: left top;
+        /*background-attachment: fixed;*/
+        background-size: cover;
+    }
+
     /*动画*/
     @keyframes move {
-        0% {top:0px;}
-        100% {top:150px;transform: rotate(90deg)}
+        0% {
+            top: 0;
+        }
+        100% {
+            top: 150px;
+            transform: rotate(90deg)
+        }
         /*100% {top:200px;}*/
     }
-    .width{
-        width:100px;
-        height:100px;
-        background:red;
-        position:relative;
-        animation:move 2s linear infinite alternate;
+
+    .width {
+        width: 100px;
+        height: 100px;
+        background: red;
+        position: relative;
+        animation: move 2s linear infinite alternate;
     }
+
     @keyframes color {
-        from {background: yellow;height:200px}
-        to {background: blue}
+        from {
+            background: yellow;
+            height: 200px
+        }
+        to {
+            background: blue
+        }
     }
-    .change{
+
+    .change {
         width: 100px;
         height: 300px;
         background: black;
-        animation:color 2s infinite alternate;
+        animation: color 2s infinite alternate;
+    }
+
+    h1 {
+        text-shadow: 5px 2px grey
+    }
+
+    ol {
+        list-style-image: url('../images/lamp.jpg');
+    }
+
+    li {
+        vertical-align: text-top;
+
     }
 
 
 </style>
 <body>
+<h1>新知识点</h1>
+<ol>
+    <li>text-align属性中justify比left好；因为它可以两边边距都对齐。现在才后悔莫及。</li>
+    <li>text-transform:方便更换大小写<img src="../images/lamp.jpg" style="vertical-align: top"></li>
+    <li>text-decoration:上下中划线，或者none</li>
+    <li>rem相对于根元素，em相对于父级元素</li>
+    <li>width只指内容的宽度（IE5.X 和 6 是内容、内边距和边框的宽度的总和）</li>
+    <li>border外还可以有一层outline（划线）</li>
+    <li>visibility:hidden可以隐藏某个元素，但隐藏的元素仍需占用与未隐藏之前一样的空间。display:none完全消失</li>
+    <li>clip:rect(0px,60px,200px,0px);剪裁</li>
+    <li>cursor光标</li>
+    <li>左边框浮动固定宽度，右边margin-left宽度，以防下面的文字超出</li>
+</ol>
+http://www.runoob.com/css/css-pseudo-classes.html 目前地址
+<caption>Table 1.1 Customers</caption>
+<p>An <img src="../images/lamp.jpg" alt="w3cschool"/> image with a default alignment.</p>
+
+<p>An <img class="top" src="../images/lamp.jpg" alt="w3cschool" style="vertical-align: text-top"/> image with a text-top
+    alignment.</p>
+
+<div style="width: 100px;height: 100px ;border: 1px solid red;padding: 10px">tt</div>
+<img src="../images/shirt.jpg" width="100px">
+
 <div class="width"></div>
+<div class="change"></div>
+<div class="change"></div>
+<div class="change"></div>
 <div class="change"></div>
 
 </body>
