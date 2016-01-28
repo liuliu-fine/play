@@ -38,14 +38,17 @@
     <area shape="circle" coords="124,58,58" href="html/image3.html" alt="shirt">
 </map>
 <img src="images/lamp.jpg" id="lamp">
-<canvas id="myCanvas" width="300" height="150" style="border: 1px solid">
-    这是不支持的浏览器
-</canvas>
-//限定日期的解决方案 firefox和ie10不支持
+
+<div>
+    <canvas id="myCanvas" width="300" height="150" style="border: 1px solid">
+        这是不支持的浏览器
+    </canvas>
+</div>
+限定日期的解决方案 firefox和ie10不支持
 <form action="demo-form.php">
 
     输入 1980-01-01 之前的日期:
-    <input type="date" name="bday" max="1979-12-30"><br>
+    <input type="date" name="bday" max="1979-12-10"><br>
 
     输入 2000-01-01 之后的日期:
     <input type="date" name="bday" min="2000-01-02"><br>
@@ -133,25 +136,25 @@ http://www.runoob.com/html/html5-semantic-elements.html
     //    ctx.fill();
 
     //彩色文字
-//    ctx.font="50px Verdana";
-//    var grd3=ctx.createLinearGradient(0,20,240,90);
-//    grd3.addColorStop(0,"black");
-//    grd3.addColorStop("0.3","magenta");
-//    grd3.addColorStop("0.6","blue");
-//    grd3.addColorStop("0.8","green");
-//    grd3.addColorStop(1,"red");
-//    ctx.strokeStyle=grd3;
-//    ctx.strokeText("Smile!",0,120);
+    //    ctx.font="50px Verdana";
+    //    var grd3=ctx.createLinearGradient(0,20,240,90);
+    //    grd3.addColorStop(0,"black");
+    //    grd3.addColorStop("0.3","magenta");
+    //    grd3.addColorStop("0.6","blue");
+    //    grd3.addColorStop("0.8","green");
+    //    grd3.addColorStop(1,"red");
+    //    ctx.strokeStyle=grd3;
+    //    ctx.strokeText("Smile!",0,120);
 
     //直线
-//    ctx.moveTo(0,0);
-//    ctx.lineTo(200,150);
-//    ctx.stroke();
+    //    ctx.moveTo(0,0);
+    //    ctx.lineTo(200,150);
+    //    ctx.stroke();
 
     //圆
 
     ctx.beginPath();
-    ctx.arc(95,50,40,0,2*Math.PI);
+    ctx.arc(95, 50, 40, 0, 2 * Math.PI);
     ctx.stroke();
 
 </script>
